@@ -21,6 +21,7 @@ class Coin(models.Model):
     class Meta:
         db_table = 'Coin'
         ordering = ['-update_date']
+        get_latest_by = 'update_date'
 
     symbol = models.ForeignKey(Symbol, related_name='coins', on_delete=models.CASCADE, null=True)
     market_cap = models.DecimalField(max_digits=14, decimal_places=2)

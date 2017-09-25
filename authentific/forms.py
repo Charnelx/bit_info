@@ -33,6 +33,7 @@ class UserRegistrationForm(forms.Form):
     username = forms.CharField(
         required = True,
         label = 'Username',
+        min_length = 3,
         max_length = 32,
         widget=forms.TextInput(attrs={'class': 'form-control', 'name': 'username', 'placeholder':'Username'})
     )
@@ -45,6 +46,7 @@ class UserRegistrationForm(forms.Form):
     password = forms.CharField(
         required = True,
         label = 'Password',
+        min_length = 8,
         max_length = 32,
         widget=forms.TextInput(attrs={'type': 'password', 'class': 'form-control', 'name': 'password', 'placeholder': 'Password'})
     )
